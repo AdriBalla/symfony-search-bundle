@@ -1,0 +1,10 @@
+parameters:
+	level: 6
+	paths:
+		- src
+		- tests
+	excludePaths:
+	    - src/AdriballaSymfonySearchBundle.php
+	    - tests/bootstrap.php
+	    - vendor
+	    - var
