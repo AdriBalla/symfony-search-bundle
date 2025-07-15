@@ -1,0 +1,80 @@
+{
+    "name": "adriballa/symfony-search-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony bundle that provides search functionality.",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.4",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "elasticsearch/elasticsearch": "^9.0",
+        "phpdocumentor/reflection-docblock": "^5.6.2",
+        "phpstan/phpdoc-parser": "^2.1",
+        "runtime/frankenphp-symfony": "^0.2.0",
+        "symfony/console": "7.2.*",
+        "symfony/dotenv": "7.2.*",
+        "symfony/flex": "^2.7.1",
+        "symfony/form": "7.2.*",
+        "symfony/framework-bundle": "7.2.*",
+        "symfony/property-access": "7.2.*",
+        "symfony/property-info": "7.2.*",
+        "symfony/runtime": "7.2.*",
+        "symfony/serializer": "7.2.*",
+        "symfony/validator": "7.2.*",
+        "symfony/yaml": "7.2.*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.75",
+        "php-http/mock-client": "^1.6.1",
+        "phpstan/phpstan": "^2.1.17",
+        "phpunit/php-code-coverage": "^10.1",
+        "phpunit/phpunit": "^10.5.47",
+        "symfony/browser-kit": "7.2.*",
+        "symfony/css-selector": "7.2.*",
+        "symfony/maker-bundle": "^1.63",
+        "symfony/phpunit-bridge": "^7.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "symfony/flex": true,
+            "symfony/runtime": true
+        },
+        "bump-after-update": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Adriballa\\SymfonySearchBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Adriballa\\SymfonySearchBundle\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "7.2.*",
+            "docker": true
+        }
+    }
+}
